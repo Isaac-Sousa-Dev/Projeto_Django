@@ -1,0 +1,59 @@
+{% extends 'site/base.html' %}
+{% block title %}Produtos{% endblock %}
+{% block content %}
+{% load static %}
+<main class="container d-flex justify-content-center align-items-center py-0">
+    <div class="col-lg-12 border p-3 main-section bg-white  border-0">
+        <div class="row py-5">
+            <h1 class="m-0 p-0 title-h1">ENTREGA</h1>
+        </div>
+        <div class="row m-0">
+            <div class="col-lg-5 left-side-product-box pb-3 x">
+                <div class="right-side-pro-detail border p-4 m-0 border-0">
+                    <div class="row">
+                        <h4 class="p-0">Retirada</h4>
+                        <div class="card mb-3 p-2" style="max-width: 540px;">
+                            <p class="text-start m-0">A retirada de aluguéis é feita na Faculdade Estácio campus
+                                parangaba.
+                            </p>
+                        </div>
+                        <h4 class="p-0">Devolução</h4>
+                        <div class="card mb-3 p-2" style="max-width: 540px;">
+                            <p class="text-start m-0">
+                                A devolução é por sua conta e é feita de segunda a sexta 12h às 19h e sábado das 10h às
+                                14h na faculdade Estácio campus parangaba.<br><br>
+
+                                1 peça precisará ser retornada daqui a 10 dias.<br><br>
+
+                                * Lembrando que é cobrado multa de R$20,00 por dia de atraso na devolução da(s) peça(s)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 d-flex align-items-start">
+                <div class="right-side-pro-detail border p-3 m-0 border ">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- <span>Who What Wear</span> -->
+                            <p class="m-0 p-0 title-h1">RESUMO DO PEDIDO</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <h1 class="m-0 p-0 price-pro">R$ 30 </h1><sup>não somado 50 reais de lavagem</sup>
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                            <div class="row">
+                                <div class>
+                                    <a href=" #" class="btn btn-danger w-100 btn-add-to-cart border-0 py-3">
+                                        CONTINUAR
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

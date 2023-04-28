@@ -1,0 +1,157 @@
+{% extends 'site/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load static %}
+<main class="container-fluid d-flex justify-content-center align-items-center homepagebanner">
+    <img src="{% static 'img/banner.png' %}" class="img-fluid" alt="Bem vindo" />
+</main>
+<section class="container-fluid  p-3 py-5">
+    <div class="container-fluid d-inline-flex justify-content-between align-items-center py-5">
+        <div>
+            <div>
+                <h1 class="title-h1">O LOOK PERFEITO PARA OCASIÃO</h1>
+                <p class="section-p">para quem sabe que merece o melhor</p>
+            </div>
+        </div>
+
+        <div class="d-flex" style="height: min-content;">
+            <!-- <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary">VESTIDOS</button>
+                <button type="button" class="btn btn-outline-primary">TERNOS</button>
+                <button type="button" class="btn btn-outline-primary">V DE CASAMENTO</button>
+            </div> -->
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                style="height: min-content;">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn  btn-outline-danger" for="btnradio1">VESTIDOS</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn  btn-outline-danger" for="btnradio2">TERNOS</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                <label class="btn  btn-outline-danger" for="btnradio3">V DE CASAMENTO</label>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-2 scroll">
+        <div class="row  flex-row flex-nowrap gap-5">
+            <div class="card card-block" style="width: 16rem;">
+                <img src="{% static 'img/noiva.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vestidos Noiva</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="categoria/1" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card" style="width: 16rem;">
+                <img src="{% static 'img/formatura.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vestido Formatura</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="categoria/2" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card" style="width: 16rem;">
+                <img src="{% static 'img/cat-img.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card" style="width: 16rem;">
+                <img src="{% static 'img/cat-img.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card" style="width: 16rem;">
+                <img src="{% static 'img/cat-img.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="background-color: #9C2A43; padding: 3.875rem 0;"
+    class="container-fluid d-inline-flex flex-column justify-content-center p-3 py-5">
+    <div class="py-5">
+        <div>
+            <h1 class="title-h1-c">NOSSA EQUIPE SEMPRE FAZENDO O MELHOR PARA VOCÊ</h1>
+            <p class="section-pc">Este é um trabalho da discplina de desenvolvimento em python na Estácio</p>
+        </div>
+    </div>
+
+    <div class="container-fluid py-2 scroll">
+        <div class="row  flex-row flex-nowrap gap-5">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/cat-img.png' %}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/cat-img.png' %}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/cat-img.png' %}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="card card-block" style="width: 16rem;">
+                <img src="{% static 'img/cat-img.png' %}" class="card-img-top" alt="...">
+            </div>
+            <div class="card card-block" style="width: 16rem;">
+                <img src="{% static 'img/cat-img.png' %}" class="card-img-top" alt="...">
+            </div>
+            <div class="card card-block" style="width: 16rem;">
+                <img src="{% static 'img/cat-img.png' %}" class="card-img-top" alt="...">
+            </div>
+            <div class="card card-block" style="width: 16rem;">
+                <img src="{% static 'img/cat-img.png' %}" class="card-img-top" alt="...">
+            </div> -->
+        </div>
+    </div>
+</section>
+{% endblock %}

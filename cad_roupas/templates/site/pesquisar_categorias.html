@@ -1,0 +1,30 @@
+{% extends 'site/base.html' %}
+{% block title %}Produtos{% endblock %}
+{% block content %}
+{% load static %}
+<main class="container-fluid  p-3 py-5">
+    <div class="container-fluid d-inline-flex justify-content-between align-items-center py-5">
+        <div>
+            <div>
+                <h1 class="title-h1">PESQUISANDO POR CATEGORIA: TAL</h1>
+                <p class="section-p">para quem sabe que merece o melhor</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-2 scroll">
+        <div class="d-flex flex-row flex-wrap gap-5">
+            {% for vestidoN in vestidosN%}
+            <div class="card card-block" style="width: 16rem;">
+                <img src="/static/{{ vestidoN.imagemCat }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ vestidoN.nomeDoVestido }}</h5>
+                    <p class="card-text">{{ vestidoN.descricaoVestido }}</p>
+                    <a href="" class="btn btn-primary">Ver mais {{ vestidoN.id }}</a>
+                </div>
+            </div>                
+            {% endfor %}
+            
+        </div>
+    </div>
+</main>
+{% endblock %}
