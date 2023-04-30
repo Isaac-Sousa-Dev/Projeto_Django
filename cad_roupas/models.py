@@ -31,7 +31,7 @@ class VestidoFesta(models.Model):
     imagemCat = models.TextField(default='img/festa.jpg')
     
     def __str__(self):
-        return self.nomeVestidoFesta
+        return self.nomeDoVestido
     
     
 #----- Seção Masculino ---------------------------------------------------   
