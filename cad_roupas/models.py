@@ -24,10 +24,10 @@ class VestidoFormatura(models.Model):
         return self.nomeVestidoFormatura
     
 class VestidoFesta(models.Model):
-    nomeVestidoFesta = models.CharField(max_length=200)
-    tamanhoVestidoFesta = models.CharField(max_length=100)
-    valorVestidoFesta= models.FloatField(default=0)
-    descricaoVestidoFesta = models.TextField(max_length=1000)
+    nomeDoVestido = models.CharField(max_length=200)
+    tamanhoDoVestido = models.CharField(max_length=100)
+    valorDoVestido= models.FloatField(default=0)
+    descricaoVestido = models.TextField(max_length=1000)
     imagemCat = models.TextField(default='img/festa.jpg')
     
     def __str__(self):

@@ -86,6 +86,8 @@ def categoria(req, cat):
       vestidosN = VestidoNoiva.objects.all() 
    elif(cat == '2'):
       vestidosN = VestidoFormatura.objects.all()
+   elif(cat == '3'):
+      vestidosN = VestidoFesta.objects.all()
    return render(
       request=req,
       template_name='site/pesquisar_categorias.html',
