@@ -1,11 +1,13 @@
 from django.contrib import admin
-from .models import VestidoNoiva
-from .models import Cliente, VestidoFormatura, VestidoFesta, TernoNoivo, Smoking, Blazer
+from . import models
 
 # Register your models here.
-admin.site.register(VestidoNoiva)
-admin.site.register(VestidoFormatura)
-admin.site.register(VestidoFesta)
-admin.site.register(TernoNoivo)
-admin.site.register(Smoking)
-admin.site.register(Blazer)
+admin.site.register(models.VestidoNoiva)
+admin.site.register(models.VestidoFormatura)
+admin.site.register(models.VestidoFesta)
+admin.site.register(models.TernoNoivo)
+admin.site.register(models.Smoking)
+admin.site.register(models.Blazer)
+admin.site.register(models.Categoria)
+admin.site.register(models.Roupa)
+
