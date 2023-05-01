@@ -1,73 +1,10 @@
-"""from django.shortcuts import render
-from .models import VestidoNoiva, VestidoFormatura, VestidoFesta
-
-
-# Create your views here.
-def home(request):
-    return render(request, 'site/home.html')
-
-def noiva(request):
-    vestidosN = VestidoNoiva.objects.all()
-    return render(request, 'app/feminino/noiva.html', {'vestidosN': vestidosN})
-
-def formatura(request):
-    vestidosForm = VestidoFormatura.objects.all()
-    return render(request, 'app/feminino/formatura.html', {'vestidosForm': vestidosForm})
-
-
-def festa(request):
-    vestidosFesta = VestidoFesta.objects.all()
-    return render(request, 'app/feminino/festa.html', {'vestidosFesta': vestidosFesta})
-
-
-
-
-
-
-
-
-def cadastroNoiva(request):
-    return render(request, 'app/cadastro/vestidos/noiva.html',)
-
-
-
-
-
-
-
-
-def todosNoiva(request):
-    vestidosN = VestidoNoiva.objects.all()
-    return render(request, 'site/todos_noiva.html', {'vestidosN': vestidosN})
-
-def todosFormatura(request):
-    vestidosForm = VestidoFormatura.objects.all()
-    return render(request, 'site/todos_formatura.html', {'vestidosForm': vestidosForm})
-
-
-
-
-
-
-
-
-
-#def formatura(request):
- #   return render(request, 'app/feminino/formatura.html')
-
-
-
-
-def login(request):
-    return render(request, 'site/login.html')
-"""
-
 import locale
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import VestidoNoiva, VestidoFormatura, VestidoFesta, Categoria, Roupa
+from .models import Categoria, Roupa
 
-locale.setlocale( locale.LC_ALL, '' )
+locale.setlocale(locale.LC_ALL, '')
+
 
 # Create your views here.
 def home(req):
@@ -90,22 +27,14 @@ def produto(req, id):
         context={
             'roupa': roupa,
             'relacionados': roupas_rel,
-            'preco': locale.currency(roupa.precoLavagem, grouping=True)
+            'preco': locale.currency(roupa.valor, grouping=True)
         }
     )
 
 
 def categoria(req, cat):
-    vestidosN = ''
-    if (cat == '1'):
-        vestidosN = VestidoNoiva.objects.all()
-    elif (cat == '2'):
-        vestidosN = VestidoFormatura.objects.all()
-    elif (cat == '3'):
-        vestidosN = VestidoFesta.objects.all()
-
     categoria = Categoria.objects.get(pk=cat)
-    roupas = Roupa.objects.select_related().filter(categoria = cat)
+    roupas = Roupa.objects.select_related().filter(categoria=cat)
 
     return render(
         request=req,
@@ -131,8 +60,3 @@ def entrega(req):
         template_name='site/entrega.html',
         context={'produto': 'Pesro'}
     )
-
-
-def noiva(request):
-    vestidosN = VestidoNoiva.objects.all()
-    return render(request, 'app/feminino/noiva.html', {'vestidosN': vestidosN})

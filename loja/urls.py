@@ -11,7 +11,6 @@ urlpatterns = [
     path(route='categoria/<cat>/', view=views.categoria),
     path(route='carrinho/', view=views.carrinho),
     path(route='entrega/', view=views.entrega),
-    path("todos-vestido-noiva/", views.noiva, name='noiva'),
 ]
 
 if settings.DEBUG:
