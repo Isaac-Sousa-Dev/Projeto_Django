@@ -1,111 +1,67 @@
-"""from django.shortcuts import render
-from .models import VestidoNoiva, VestidoFormatura, VestidoFesta
-
-
-# Create your views here.
-def home(request):
-    return render(request, 'site/home.html')
-
-def noiva(request):
-    vestidosN = VestidoNoiva.objects.all()
-    return render(request, 'app/feminino/noiva.html', {'vestidosN': vestidosN})
-
-def formatura(request):
-    vestidosForm = VestidoFormatura.objects.all()
-    return render(request, 'app/feminino/formatura.html', {'vestidosForm': vestidosForm})
-
-
-def festa(request):
-    vestidosFesta = VestidoFesta.objects.all()
-    return render(request, 'app/feminino/festa.html', {'vestidosFesta': vestidosFesta})
-
-
-
-
-
-
-
-
-def cadastroNoiva(request):
-    return render(request, 'app/cadastro/vestidos/noiva.html',)
-
-
-
-
-
-
-
-
-def todosNoiva(request):
-    vestidosN = VestidoNoiva.objects.all()
-    return render(request, 'site/todos_noiva.html', {'vestidosN': vestidosN})
-
-def todosFormatura(request):
-    vestidosForm = VestidoFormatura.objects.all()
-    return render(request, 'site/todos_formatura.html', {'vestidosForm': vestidosForm})
-
-
-
-
-
-
-
-
-
-#def formatura(request):
- #   return render(request, 'app/feminino/formatura.html')
-
-
-
-
-def login(request):
-    return render(request, 'site/login.html')
-"""
-
-
+import locale
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import VestidoNoiva, VestidoFormatura, VestidoFesta
+from .models import Categoria, Roupa
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+locale.setlocale(locale.LC_ALL, '')
+
 
 # Create your views here.
 def home(req):
-   return render(
-      request=req,
-      template_name='site/home.html',
-      context={'name': 'Pesro'}
-   )
+    categorias = Categoria.objects.all()
+
+    return render(
+        request=req,
+        template_name='site/home.html',
+        context={'categorias': categorias}
+    )
+
+
 def produto(req, id):
-   return render(
-      request=req,
-      template_name='site/produto.html',
-      context={'produto': 'Pesro'}
-   )
+    roupa = Roupa.objects.get(pk=id)
+    roupas_rel = Roupa.objects.select_related().filter(categoria=roupa.categoria)
+
+    return render(
+        request=req,
+        template_name='site/produto.html',
+        context={
+            'roupa': roupa,
+            'relacionados': roupas_rel,
+            'preco': locale.currency(roupa.valor, grouping=True)
+        }
+    )
+
+
 def categoria(req, cat):
-   vestidosN = ''
-   if(cat == '1'):
-      vestidosN = VestidoNoiva.objects.all() 
-   elif(cat == '2'):
-      vestidosN = VestidoFormatura.objects.all()
-   elif(cat == '3'):
-      vestidosN = VestidoFesta.objects.all()
-   return render(
-      request=req,
-      template_name='site/pesquisar_categorias.html',
-      context={'vestidosN': vestidosN}
-   )
+    categoria = Categoria.objects.get(pk=cat)
+    roupas = Roupa.objects.select_related().filter(categoria=cat)
+
+    return render(
+        request=req,
+        template_name='site/pesquisar_categorias.html',
+        context={
+            'categoria': categoria,
+            'roupas': roupas,
+        }
+    )
+
+
 def carrinho(req):
-   return render(
-      request=req,
-      template_name='site/carrinho.html',
-      context={'produto': 'Pesro'}
-   )
+    return render(
+        request=req,
+        template_name='site/carrinho.html',
+        context={'produto': 'Pesro'}
+    )
+
+
 def entrega(req):
-   return render(
-      request=req,
-      template_name='site/entrega.html',
-      context={'produto': 'Pesro'}
-   )
-   
-def noiva(request):
-    vestidosN = VestidoNoiva.objects.all()
-    return render(request, 'app/feminino/noiva.html', {'vestidosN': vestidosN})
+    return render(
+        request=req,
+        template_name='site/entrega.html',
+        context={'produto': 'Pesro'}
+    )
+    
+class MyView(LoginRequiredMixin):
+    login_url = '/login/'
+    redirect_field_name = 'redirect_to'

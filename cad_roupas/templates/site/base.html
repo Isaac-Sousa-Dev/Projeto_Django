@@ -35,23 +35,30 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            catalogo
+                            Catálogo
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
+                            {% block dropdown_menu %}{% endblock %}
+
+                            <!--<li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
                         </ul>
                     </li>
                 </ul>
                 <div class="v-grid gap-2">
-                    <a class="btn btn-secondary cart " role="button" aria-disabled="true" href="/carrinho"><i
+                    {% if user.is_authenticated %}
+                        {{ user.get_username }}
+                        <a class="btn btn-primary " role="button" aria-disabled="true" href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
+                        <a class="btn btn-secondary cart " role="button" aria-disabled="true" href="/carrinho"><i
                             class="bi bi-bag" style="color: black;"></i></a>
-                    <a class="btn btn-primary " role="button" aria-disabled="true">Primary link</a>
-                    <a class="btn btn " role="button" aria-disabled="true">Link</a>
+                    {% else %}
+                        <a class="btn btn-secondary cart " role="button" aria-disabled="true" href="{% url 'login' %}"><i
+                            class="bi bi-bag" style="color: black;"></i></a>
+                        <a class="btn btn-primary " role="button" aria-disabled="true" href="{% url 'login' %}">Login</a>
+                        <a class="btn btn-primary " role="button" aria-disabled="true" href="">Sobre Nós</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

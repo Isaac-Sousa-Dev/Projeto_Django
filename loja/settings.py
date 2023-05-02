@@ -57,7 +57,7 @@ ROOT_URLCONF = 'loja.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'loja.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+"""production_DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'railway',
@@ -84,6 +84,17 @@ DATABASES = {
         'PASSWORD': 'gP3vnnLLjbf3cMc8eGe4',
         'HOST': 'containers-us-west-21.railway.app',
         'PORT': '6149',
+    }
+}"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'railway',
+        'USER': 'root',
+        'PASSWORD': 'vaY4DrZADOw34PsC0mHF',
+        'HOST': 'containers-us-west-18.railway.app',
+        'PORT': '7688',
     }
 }
 
@@ -135,6 +146,12 @@ STATICFILES_DIRS = [
 
 
 # Configuração de  Autenticação
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'login-teste'
-LOGIN_URL = 'login-teste'
+LOGIN_REDIRECT_URL = '/'
+#LOGOUT_REDIRECT_URL = 'login-teste'
+#LOGIN_URL = 'login-teste'
+
+# Base url to serve media files
+MEDIA_URL = '/media/'
+
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

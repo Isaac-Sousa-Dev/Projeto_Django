@@ -1,5 +1,12 @@
 {% extends 'site/base.html' %}
 {% block title %}Home{% endblock %}
+
+{% block dropdown_menu %}
+    {% for categoria in categorias%}
+        <li><a class="dropdown-item" href="categoria/{{categoria.id}}">{{categoria.nome}}</a></li>
+    {% endfor %}
+{% endblock %}
+
 {% block content %}
 {% load static %}
 <main class="container-fluid d-flex justify-content-center align-items-center homepagebanner">
@@ -9,7 +16,7 @@
     <div class="container-fluid d-inline-flex justify-content-between align-items-center py-5">
         <div>
             <div>
-                <h1 class="title-h1">O LOOK PERFEITO PARA OCASIÃO</h1>
+                <h1 class="title-h1">PROCURE O LOOK PERFEITO PARA OCASIÃO</h1>
                 <p class="section-p">para quem sabe que merece o melhor</p>
             </div>
         </div>
@@ -22,64 +29,25 @@
             </div> -->
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
                 style="height: min-content;">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn  btn-outline-danger" for="btnradio1">VESTIDOS</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                <label class="btn  btn-outline-danger" for="btnradio2">TERNOS</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                <label class="btn  btn-outline-danger" for="btnradio3">V DE CASAMENTO</label>
+                <!--{% for categoria in categorias%}
+                <input type="radio" class="btn-check" name="btnradio" id="{{categoria.id}}" autocomplete="off" checked>
+                <label class="btn  btn-outline-danger" for="{{categoria.id}}">{{categoria.nome}}</label>
+                {% endfor %}-->
             </div>
         </div>
     </div>
     <div class="container-fluid py-2 scroll">
         <div class="row  flex-row flex-nowrap gap-5">
-            <div class="card card-block" style="width: 16rem;">
-                <img src="{% static 'img/noiva.jpg' %}" class="card-img-top" alt="...">
+            {% for categoria in categorias%}
+            <div class="card card-block" style="width: 16rem;" id="{{categoria.id}}">
+                <img src="/media/{{categoria.imagem}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Vestidos Noiva</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="categoria/1" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">{{ categoria.nome }}</h5>
+                    <p class="card-text">{{ categoria.descricao }}</p>
+                    <a href="categoria/{{categoria.id}}" class="btn btn-primary">Ver mais</a>
                 </div>
             </div>
-            <div class="card" style="width: 16rem;">
-                <img src="{% static 'img/formatura.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Vestido Formatura</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="categoria/2" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 16rem;">
-                <img src="{% static 'img/festa.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Vestido Festas</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="categoria/3" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 16rem;">
-                <img src="{% static 'img/cat-img.png' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 16rem;">
-                <img src="{% static 'img/cat-img.png' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
