@@ -49,15 +49,16 @@
                 </ul>
                 <div class="v-grid gap-2">
                     {% if user.is_authenticated %}
-                        {{ user.get_username }}
-                        <a class="btn btn-primary " role="button" aria-disabled="true" href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
-                        <a class="btn btn-secondary cart " role="button" aria-disabled="true" href="/carrinho"><i
+                    {{ user.get_username }}
+                    <a class="btn btn-primary " role="button" aria-disabled="true"
+                        href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
+                    <a class="btn btn-secondary cart " role="button" aria-disabled="true" href="/carrinho"><i
                             class="bi bi-bag" style="color: black;"></i></a>
                     {% else %}
-                        <a class="btn btn-secondary cart " role="button" aria-disabled="true" href="{% url 'login' %}"><i
+                    <a class="btn btn-secondary cart " role="button" aria-disabled="true" href="/carrinho/"><i
                             class="bi bi-bag" style="color: black;"></i></a>
-                        <a class="btn btn-primary " role="button" aria-disabled="true" href="{% url 'login' %}">Login</a>
-                        <a class="btn btn-primary " role="button" aria-disabled="true" href="">Sobre Nós</a>
+                    <a class="btn btn-primary " role="button" aria-disabled="true" href="{% url 'login' %}">Login</a>
+                    <a class="btn btn-primary " role="button" aria-disabled="true" href="">Sobre Nós</a>
                     {% endif %}
                 </div>
             </div>
