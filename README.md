@@ -4,7 +4,7 @@ Projeto Django de um site de aluguel de roupa.
 
 ## Project Description
 
-Site simples onde o usuário poderá alugar roupas de varios tipos e com preços de lavagens diferentes. 
+Site simples onde o usuário poderá alugar roupas de varios tipos e com preços de lavagens diferentes.
 
 ### Installation
 

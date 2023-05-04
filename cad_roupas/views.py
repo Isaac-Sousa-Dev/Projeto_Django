@@ -2,6 +2,7 @@ import locale
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Categoria, Roupa
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 locale.setlocale(locale.LC_ALL, '')
 
@@ -60,3 +61,7 @@ def entrega(req):
         template_name='site/entrega.html',
         context={'produto': 'Pesro'}
     )
+    
+class MyView(LoginRequiredMixin):
+    login_url = '/login/'
+    redirect_field_name = 'redirect_to'

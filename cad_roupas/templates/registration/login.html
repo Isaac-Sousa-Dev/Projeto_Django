@@ -1,0 +1,98 @@
+{% extends "site/base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+{% if user.is_authenticated %}
+<p>Your account doesn't have access to this page. To proceed,
+  please login with an account that has access.</p>
+{% else %}
+<p>Please login to see this page.</p>
+{% endif %}
+{% endif %}
+
+<section class>
+  <div class="container py-5 h-70">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <!-- <div class="text-center">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    style="width: 185px;" alt="logo">
+                  <h1 class="mt-1 mb-5 pb-1">We are The Lotus Team</h1>
+                </div> -->
+                <H1>Entrar</H1>
+                <form method="post" action="{% url 'login' %}">
+                  {% csrf_token %}
+                  <!-- <p>Please login to your account</p> -->
+
+                  <div class="form-outline mb-4">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1 pt-1 mb-5 pb-1">
+                    <input type="submit" value="login" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-0" />
+                    <a class="text-muted" href="{% url 'password_reset' %}">Esqueceu a senha?</a>
+                    <input type="hidden" name="next" value="{{ next }}" />
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">Não tem conta?</p>
+                    <button type="button" class="btn btn-outline-danger">Crie nova conta</button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h1 class="mb-4">Bem vindo</h1>
+                <p class="small mb-0">
+                  Uma loja de aluguel de roupas online seria um negócio que oferece aos seus clientes a oportunidade de
+                  alugar roupas para ocasiões especiais ou para uso cotidiano. Os clientes poderiam acessar o site da
+                  loja para escolher entre uma variedade de estilos e tamanhos de roupas, incluindo vestidos de gala,
+                  ternos, blazers, saias, blusas e acessórios.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>{{ form.username.label_tag }}</td>
+      <td>{{ form.username }}</td>
+    </tr>
+    <tr>
+      <td>{{ form.password.label_tag }}</td>
+      <td>{{ form.password }}</td>
+    </tr>
+  </table>
+  <input type="submit" value="login" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p> -->
+
+{% endblock %}
