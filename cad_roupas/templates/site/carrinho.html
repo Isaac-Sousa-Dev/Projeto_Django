@@ -1,99 +1,84 @@
-{% extends 'site/base.html' %}
-{% block title %}Produtos{% endblock %}
-{% block content %}
-{% load static %}
+{% extends 'site/base.html' %} {% block title %}Produtos{% endblock %} {% block content %} {% load static %}
 <main class="container d-flex justify-content-center align-items-center py-0">
-    <div class="col-lg-12 border p-3 main-section bg-white  border-0">
-        <div class="row py-5">
-            <h1 class="m-0 p-0 title-h1">MEU CARRINHO</h1>
-        </div>
-        <div class="row m-0">
-            <div class="col-lg-5 left-side-product-box pb-3 x">
-                <div class="right-side-pro-detail border p-4 m-0">
-                    <div class="row">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{% static 'img/cat-img.png' %}" class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Item</h5>
-                                        <p class="m-0">Tamanho p</p>
-                                        <div class="col-lg-12">
-                                            <h1 class="m-0 p-0 price-pro">R$ 30 </h1><sup>não somado 50 reais de
-                                                lavagem</sup>
-                                        </div>
-                                        <a class="btn btn-secondary cart " role="button" aria-disabled="true"
-                                            style="color: black;"><i class="bi bi-trash3"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{% static 'img/cat-img.png' %}" class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Item</h5>
-                                        <p class="m-0">Tamanho p</p>
-                                        <div class="col-lg-12">
-                                            <h1 class="m-0 p-0 price-pro">R$ 30 </h1><sup>não somado 50 reais de
-                                                lavagem</sup>
-                                        </div>
-                                        <a class="btn btn-secondary cart " role="button" aria-disabled="true"
-                                            style="color: black;"><i class="bi bi-trash3"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="{% static 'img/cat-img.png' %}" class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Item</h5>
-                                        <p class="m-0">Tamanho p</p>
-                                        <div class="col-lg-12">
-                                            <h1 class="m-0 p-0 price-pro">R$ 30 </h1><sup>não somado 50 reais de
-                                                lavagem</sup>
-                                        </div>
-                                        <a class="btn btn-secondary cart " role="button" aria-disabled="true"
-                                            style="color: black;"><i class="bi bi-trash3"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7 d-flex align-items-start">
-                <div class="right-side-pro-detail border p-3 m-0 border ">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <span>Who What Wear</span> -->
-                            <p class="m-0 p-0 title-h1">RESUMO DO PEDIDO</p>
-                        </div>
-                        <div class="col-lg-12">
-                            <h1 class="m-0 p-0 price-pro">R$ 30 </h1><sup>não somado 50 reais de lavagem</sup>
-                        </div>
-                        <div class="col-lg-12 mt-3">
-                            <div class="row">
-                                <div class>
-                                    <a href="/entrega" class="btn btn-danger w-100 btn-add-to-cart border-0 py-3">
-                                        CONTINUAR
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="col-lg-12 border p-3 main-section bg-white border-0">
+    <div class="row py-5">
+      <h1 class="m-0 p-0 title-h1">MEU CARRINHO</h1>
     </div>
+    <div class="row m-0">
+      <div class="col-lg-5 left-side-product-box pb-3 x">
+        <div class="right-side-pro-detail border p-4 m-0">
+          <div class="row">
+          {% if carrinho_items %}
+            {% for item in carrinho_items %}
+            <div class="card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-5">
+                  <img
+                    src="/media/{{item.roupa.imagem}}"
+                    style="max-width: 100%; height: 100%; object-fit: cover"
+                    class="rounded-start col-md-4"
+                    alt="{{item.roupa.nome}}"
+                  />
+                </div>
+                <div class="col-md-7 d-flex justify-content-center align-items-center">
+                  <div class="card-body d-flex flex-column h-100 justify-content-evenly">
+                    <h5 class="card-title">{{item.roupa.nome}}</h5>
+                    <p class="m-0">Tamanho {{item.tamanho}}</p>
+                    <div class="col-lg-12">
+                      <h1 class="m-0 p-0 price-pro">R$ {{item.roupa.valor}}</h1>
+                        <p><small>não somado {{item.roupa.precoLavagem}} reais de lavagem</small></p>
+                    </div>
+                    <a
+                      href="/carrinho/del/{{item.id}}/"
+                      class="btn btn-secondary cart col-12"
+                      role="button"
+                      aria-disabled="true"
+                      style="color: black"
+                      ><i class="bi bi-trash3"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          {% else %}
+              <h1>Não há itens no carrinho</h1>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 d-flex align-items-start">
+        <div class="right-side-pro-detail border p-3 m-0 border">
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- <span>Who What Wear</span> -->
+              <p class="m-0 p-0 title-h1">RESUMO DO PEDIDO</p>
+            </div>
+            <div class="col-lg-12">
+              <h1 class="m-0 p-0 price-pro">R$ {{carrinho_preco}}</h1>
+                <p>
+                    <small>não somado {{carrinho_lavagem}} reais de lavagem</small>
+                </p>
+            </div>
+            <div class="col-lg-12 mt-3">
+                {% if carrinho_items %}
+                    <div class="row">
+                        <div class>
+                          <a href="/entrega" class="btn btn-danger w-100 btn-add-to-cart border-0 py-3"> CONTINUAR </a>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="row">
+                        <div class>
+                          <a href="#" class="btn w-100 btn-add-to-cart border-0 py-3"> ADICIONE ITEMS ANTES DE CONINUAR </a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 {% endblock %}

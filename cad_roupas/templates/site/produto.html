@@ -1,84 +1,88 @@
-{% extends 'site/base.html' %}
-{% block title %}Produtos{% endblock %}
-{% block content %}
-{% load static %}
-<main class="container d-flex justify-content-center align-items-center py-5 ">
-    <div class="col-lg-12 border p-3 main-section bg-white  border-0">
-        <div class="row m-0">
-            <div class="col-lg-5 left-side-product-box pb-3  border-0">
-                <img src="/media/{{ roupa.imagem }}" class="border p-3  border-0">
+{% extends 'site/base.html' %} {% block title %}Produtos{% endblock %} {% block content %} {% load static %}
+<main class="container d-flex justify-content-center align-items-center py-5">
+  <div class="col-lg-12 border p-3 main-section bg-white border-0">
+    <div class="row m-0">
+      <div class="col-lg-5 left-side-product-box pb-3 border-0">
+        <img src="/media/{{ roupa.imagem }}" class="border p-3 border-0" />
+      </div>
+      <div class="col-lg-7 d-flex align-items-center">
+        <div class="right-side-pro-detail border p-3 m-0 border-0">
+          <form class="row" method="get" action="/carrinho/add/{{roupa.id}}">
+            <div class="col-lg-12">
+              <!-- <span>Who What Wear</span> -->
+              <p class="m-0 p-0 title-h1">{{roupa.nome}}</p>
             </div>
-            <div class="col-lg-7 d-flex align-items-center">
-                <div class="right-side-pro-detail border p-3 m-0 border-0">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- <span>Who What Wear</span> -->
-                            <p class="m-0 p-0 title-h1">{{roupa.nome}}</p>
-                        </div>
-                        <div class="col-lg-12 pt-2">
-                            <!-- <h5>Product Detail</h5> -->
-                            <span>{{roupa.descricao}}</span>
-                        </div>
-                        <div class="selects py-3 gap-3 d-flex flex-column">
-                            <div class="col-sm-12 col-lg-4">
-                                <h6 class="h6-selects">Tamanho:</h6>
-                                <div class="">
-                                    <select class="form-select border-danger rounded-pill py-2" id="form-tamanho-select"
-                                        aria-label="Selecionar Tamanho">
-                                        <option selected>Selecionar Tamanho</option>
-                                        <option value="1">P</option>
-                                        <option value="2">M</option>
-                                        <option value="3">G</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-lg-4">
-                                <h6 class="h6-selects">Data de aluguel:</h6><sup>Entrega obrigatória após 10 dias</sup>
-                                <div class="d-flex align-items-center gap-2">
-                                    <input type="date" id="birthday" name="birthday"
-                                        class="form-control border-danger rounded-pill py-2">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <h1 class="m-0 p-0 price-pro">{{preco}}</h1><sup>não somado {{roupa.precoLavagem}} reais de lavagem</sup>
-                        </div>
-                        <div class="col-lg-12 mt-3">
-                            <div class="row">
-                                <div class>
-                                    <a href=" #" class="btn btn-danger w-100 btn-add-to-cart border-0 py-3">Add To
-                                        Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-12 pt-2">
+              <!-- <h5>Product Detail</h5> -->
+              <span>{{roupa.descricao}}</span>
+            </div>
+            <div class="selects py-3 gap-3 d-flex flex-column">
+              <div class="col-sm-12 col-lg-4">
+                <h6 class="h6-selects">Tamanho:</h6>
+                <div class="">
+                  <select
+                    class="form-select border-danger rounded-pill py-2"
+                    id="tamanho"
+                    name="tamanho"
+                    aria-label="Selecionar Tamanho"
+                    required
+                  >
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                  </select>
                 </div>
+              </div>
+              <div class="col-sm-12 col-lg-4">
+                <h6 class="h6-selects">Data de aluguel:</h6>
+                  <p>
+                    <small>Entrega obrigatória 10 dias após compra.</small>
+                  </p>
+              </div>
             </div>
+            <div class="col-lg-12">
+              <h1 class="m-0 p-0 price-pro">{{preco}}</h1>
+                <p>
+                    <small>não somado {{roupa.precoLavagem}} reais de lavagem</small>
+                </p>
+            </div>
+            <div class="col-lg-12 mt-3">
+              <div class="row">
+                <div class>
+                  <button type="submit" class="btn btn-danger w-100 btn-add-to-cart border-0 py-3">Add To Cart</button>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
+  </div>
 </main>
-<section class="container-fluid  p-3 py-5">
-    <div class="container-fluid d-inline-flex justify-content-between align-items-center py-5">
-        <div>
-            <div>
-                <h1 class="title-h1">OUTROS LOOKS DE TANANA PARA VOCÊ</h1>
-                <p class="section-p">para quem sabe que merece o melhor</p>
-            </div>
-        </div>
+<section class="container-fluid p-3 py-5">
+  <div class="container-fluid d-inline-flex justify-content-between align-items-center py-5">
+    <div>
+      <div>
+        <h1 class="title-h1">OUTROS LOOKS DE TANANA PARA VOCÊ</h1>
+        <p class="section-p">para quem sabe que merece o melhor</p>
+      </div>
     </div>
-    <div class="container-fluid py-2 scroll">
-        <div class="row  flex-row flex-nowrap gap-5">
-            {% for relacionado in relacionados %}
-            <div class="card card-block" style="width: 16rem;">
-                <img src="/media/{{relacionado.imagem}}" class="card-img-top" alt="...">
+  </div>
+  <div class="container-fluid py-2 scroll">
+    <div class="row flex-row flex-nowrap gap-5">
+      {% for relacionado in relacionados %}
+          <div class="card card-block" style="width: 20rem;" id="{{categoria.id}}">
+                <img src="/media/{{relacionado.imagem}}" class="card-img-top" style="max-width: 100%; max-height: 55%; object-fit: cover" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ relacionado.nome }}</h5>
                     <p class="card-text">{{ relacionado.descricao }}</p>
-                    <a href="produto/{{relacionado.id}}" class="btn btn-primary">Ver mais {{ relacionado.id }}</a>
+                </div>
+                <div class="card-footer">
+                     <a href="produto/{{relacionado.id}}" class="btn btn btn btn-danger w-100">Ver mais</a>
                 </div>
             </div>
-            {% endfor %}
-        </div>
+      {% endfor %}
     </div>
+  </div>
 </section>
 {% endblock %}
