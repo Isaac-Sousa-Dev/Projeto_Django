@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99833b39-77fa-496f-a5b4-1da353e0c2ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cad_roupas/migrations/0016_carrinho_carrinhoitem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cad_roupas/migrations/0017_remove_cliente_nomedocliente_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cad_roupas/migrations/0018_pedido_preco_total_alter_carrinhoitem_data_compra_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cad_roupas/templates/site/obrigado.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/categoria/blaze_MBApcAw.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/clientes/cat-img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/blazer_azul_PsWCaf1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/grupinho/geiza.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/grupinho/isac.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/grupinho/lili.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/grupinho/mig.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Projeto_Django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projeto_Django.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cad_roupas/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/migrations/0010_categoria_roupa.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cad_roupas/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/cad_roupas/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/templates/site/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/cad_roupas/templates/site/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/templates/site/carrinho.html" beforeDir="false" afterPath="$PROJECT_DIR$/cad_roupas/templates/site/carrinho.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/templates/site/entrega.html" beforeDir="false" afterPath="$PROJECT_DIR$/cad_roupas/templates/site/entrega.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/templates/site/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/cad_roupas/templates/site/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/templates/site/pesquisar_categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/cad_roupas/templates/site/pesquisar_categorias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/templates/site/produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/cad_roupas/templates/site/produto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cad_roupas/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cad_roupas/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loja/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/loja/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,35 +32,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "carrinho-3",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Developer/projects/FaculdadePythonDjango/Projeto_Django/static/grupinho",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;carrinho-3&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Developer/projects/FaculdadePythonDjango/Projeto_Django/static/grupinho&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Developer\projects\FaculdadePythonDjango\Projeto_Django\static\grupinho" />
       <recent name="D:\Developer\projects\FaculdadePythonDjango\Projeto_Django\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Developer\projects\FaculdadePythonDjango\Projeto_Django" />
       <recent name="D:\Developer\projects\FaculdadePythonDjango\Projeto_Django\media\clientes" />
     </key>
   </component>
@@ -105,10 +81,10 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
+      <option name="port" value="8888" />
       <option name="host" value="" />
       <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="http://127.0.0.1:8000/" />
+      <option name="browserUrl" value="http://127.0.0.1:8888/" />
       <option name="runTestServer" value="false" />
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
@@ -125,7 +101,16 @@
       <option name="presentableId" value="Default" />
       <updated>1682885603004</updated>
       <workItem from="1683236671638" duration="532000" />
-      <workItem from="1683238808841" duration="16331000" />
+      <workItem from="1683238808841" duration="16925000" />
+      <workItem from="1683291615491" duration="106000" />
+      <workItem from="1683291737462" duration="2857000" />
+      <workItem from="1683294967291" duration="122000" />
+      <workItem from="1683295109405" duration="337000" />
+      <workItem from="1683295464307" duration="262000" />
+      <workItem from="1683295744599" duration="1002000" />
+      <workItem from="1683298587586" duration="4798000" />
+      <workItem from="1683325816069" duration="615000" />
+      <workItem from="1683471822700" duration="591000" />
     </task>
     <servers />
   </component>
